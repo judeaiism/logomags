@@ -29,8 +29,6 @@ export default function LogoMagicPro() {
   const [isPaymentReportDialogOpen, setIsPaymentReportDialogOpen] = useState(false);
   const [isReceiptDialogOpen, setIsReceiptDialogOpen] = useState(false);
   const [receiptNumber, setReceiptNumber] = useState('');
-  const [logoUrl, setLogoUrl] = useState<string | null>(null);
-  const [targetImageUrl, setTargetImageUrl] = useState<string | null>(null);
   const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [paypalTransactionId, setPaypalTransactionId] = useState('');
@@ -102,9 +100,6 @@ export default function LogoMagicPro() {
       const uploadedLogoUrl = await uploadImageToFirebase(logo!, `logos/${logo!.name}`);
       const uploadedTargetImageUrl = await uploadImageToFirebase(targetImage!, `target-images/${targetImage!.name}`);
       
-      setLogoUrl(uploadedLogoUrl);
-      setTargetImageUrl(uploadedTargetImageUrl);
-
       // Save user information and image URLs to Firestore
       await saveUserInfo(userEmail, userName, logoPlacement, uploadedLogoUrl, uploadedTargetImageUrl);
       
@@ -534,7 +529,7 @@ export default function LogoMagicPro() {
               className="w-full mt-2"
               variant="outline"
             >
-              I've completed the payment
+              I&apos;ve completed the payment
             </Button>
           </div>
         </div>
@@ -572,12 +567,12 @@ export default function LogoMagicPro() {
         <div id="payment-report-dialog" className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded shadow-lg">
             <h2 className="text-lg font-bold">Report Your Payment</h2>
-            <p>If you've completed the payment, click the button below to receive your receipt.</p>
+            <p>If you&apos;ve completed the payment, click the button below to receive your receipt.</p>
             <Button 
               onClick={handlePaymentReport}
               className="w-full mt-4"
             >
-              I've made the payment
+              I&apos;ve made the payment
             </Button>
           </div>
         </div>
