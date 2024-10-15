@@ -16,6 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "LogoMagic",
   description: "Add Logo and Brand To Anything",
+  metadataBase: new URL('https://logomagic.vercel.app'),
   openGraph: {
     title: "LogoMagic",
     description: "Add Logo and Brand To Anything",
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
         url: "/logomagic.png",
         width: 1200,
         height: 630,
+        alt: "LogoMagic Preview",
       },
     ],
     locale: "en_US",
@@ -38,6 +40,9 @@ export const metadata: Metadata = {
     creator: "@eneffti",
     images: ["/logomagic.png"],
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -47,6 +52,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
