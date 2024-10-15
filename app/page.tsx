@@ -582,7 +582,7 @@ export default function LogoMagicPro() {
         <div id="receipt-dialog" className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded shadow-lg">
             <h2 className="text-lg font-bold">Payment Successful</h2>
-            <p>Thank you for your purchase! Here's your receipt:</p>
+            <p>Thank you for your purchase! Here&apos;s your receipt:</p>
             <div className="mt-4 p-4 bg-gray-100 rounded">
               <p><strong>Receipt Number:</strong> {receiptNumber}</p>
               <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
