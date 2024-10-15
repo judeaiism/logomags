@@ -26,5 +26,6 @@ const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 export const db = getFirestore(app);
 
-// Log the storage bucket from the config
-console.log('Firebase Storage Bucket:', firebaseConfig.storageBucket);
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Firebase Storage Bucket:', firebaseConfig.storageBucket);
+}
